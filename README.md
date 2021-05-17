@@ -19,14 +19,4 @@ Questions contains the title, body, creation date, closed date (if applicable), 
 
 Tags contains the tags on each of these questions.
 
-Data Pre-Processing
 
-Read Questions File
-Drop All columns except Id,Title and Body
-Now the text in the Body column seem to have many html tags in the text. We use Regular Expressions and Clean the Body column text by removing the html tags
-
-import re 
-def rem_html_tags(body):
-    regex = re.compile('<.*?>')
-    return re.sub(regex, '', body)
-ques['Body'] = ques['Body'].apply(rem_html_tags)
